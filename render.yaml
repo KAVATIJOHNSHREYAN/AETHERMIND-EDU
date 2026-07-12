@@ -3,6 +3,7 @@ services:
   - type: web
     name: aetherchat-api
     env: python
+    rootDir: backend
     buildCommand: pip install -r requirements.txt && python -m spacy download en_core_web_sm
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port 10000
     envVars:
@@ -38,6 +39,7 @@ services:
   - type: worker
     name: aetherchat-worker
     env: python
+    rootDir: backend
     buildCommand: pip install -r requirements.txt && python -m spacy download en_core_web_sm
     startCommand: celery -A app.tasks.celery_app worker --loglevel=info
     envVars:
