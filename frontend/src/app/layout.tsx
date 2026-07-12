@@ -3,7 +3,7 @@ import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
-  title: "Aethermind Edu",
+  title: "Aethermind EDU",
   description: "A production-grade AI conversational interface utilizing FastAPI, Next.js, and advanced RAG pipeline workflows.",
 };
 

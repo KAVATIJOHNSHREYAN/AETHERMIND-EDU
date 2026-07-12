@@ -121,15 +121,15 @@ export default function RegisterPage() {
           
           {/* Brand / Logo */}
           <div className="absolute top-8 left-8 lg:top-12 lg:left-12 flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
-              <Zap className="w-4 h-4 text-white" />
+            <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center shadow-md shadow-blue-500/25 overflow-hidden">
+              <img src="/samrat_logo.png" alt="Aethermind EDU" className="w-full h-full object-cover scale-[1.02]" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-slate-900">Aethermind</span>
+            <span className="font-bold text-lg tracking-tight text-slate-855">Aethermind EDU</span>
           </div>
 
           <div className="max-w-md w-full mx-auto mt-16 lg:mt-0">
             <h1 className="text-3xl font-bold text-slate-900 mb-2">Create Account</h1>
-            <p className="text-slate-500 mb-8 text-sm">Join SAMRAT AI and start building.</p>
+            <p className="text-slate-500 mb-8 text-sm">Join Aethermind EDU and start learning.</p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               
