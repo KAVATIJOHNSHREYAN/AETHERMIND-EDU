@@ -1,0 +1,11 @@
+.vercel
+.env
+.env.*
+.venv/
+venv/
+node_modules/
+.next/
+dist/
+build/
+*.db
+*.log
