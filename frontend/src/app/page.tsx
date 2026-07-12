@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { useChatStore, ChatRoom, ChatMessage } from '@/store/chatStore';
 import { apiService } from '@/services/api';
 import { useVoice } from '@/hooks/useVoice';
@@ -131,6 +132,7 @@ function renderMessageContent(content: string) {
 }
 
 export default function Home() {
+  const router = useRouter();
   const { logout } = useAuth();
   const {
     token,
@@ -412,13 +414,15 @@ export default function Home() {
     }
   }, [activeScreen, mounted]);
 
-  // Load chat rooms and automatically bypass splash if authenticated
+  // Redirect to login if not authenticated
   useEffect(() => {
     if (token) {
       loadChats();
       setActiveScreen('chat');
+    } else if (mounted) {
+      router.push('/auth/login');
     }
-  }, [token]);
+  }, [token, mounted, router]);
 
   const loadChats = async () => {
     if (!token) return;
